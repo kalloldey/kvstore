@@ -1,0 +1,9 @@
+set Cricket Sachin Saurav Dravid Dhoni
+get Cricket
+get Football
+set Football CR7 Messi Kaka
+get Football
+set Tennis Federer Nadal Paes
+get Tennis
+get Cricket
+

@@ -1,0 +1,40 @@
+Key Value Server
+----------------
+By: Kallol Dey, Roll: 123050030, M.Tech. II
+============================================================
+
+How to run:
+-----------
+1. Run the server with 
+	'$ go run kvserver.go'.
+2. In another tab run the client with 
+	'$ go run kvclient.go'.
+3. The client will run with some predefined keyword.
+4. While client is running everytime a promt will appear. Give command of get or set on that prompt.
+5. Tyep command get <key_strictly_of_one_word> for getting a value from server.
+6. Type command set <key_strictly_of_one_word> <value, can be of multiple words> to set a value in the server.
+7. Type command 'help' to see the several commands available at any time
+8. Type command 'exit' to exit the prompt and client program will end.
+9. Server program need to be stopped manually by ctrl+D
+10.The input.txt contains some set of get and set commands. It can be redirected to the client code  like: 
+	'$ go run kvclient.go < input.txt > output.txt '. 
+Make sure the kvserver is already running.
+
+
+Details about the program:
+--------------------------
+1. The server is a http server and the client is communicating with the server using get methods.
+2. As of now only string is supported as a value. 
+3. Key is kept as single word for simplicity of giving input. However this can be improved.
+4. The backend key value saving is done in hash table.
+5. The server is now inmemory and the key-value pair will be lost once server finishes execution.
+6. Multiple client can access the server simultaneously and all keys are visible to everybody i.e. no motion of namespace.
+7. Evidently key size is limited by the size of a string without space, that go can support.
+
+Acknowledgements:
+-----------------
+Read the following websites and see some sample go code from them:
+	1.http://blog.golang.org/go-maps-in-action
+	2.http://www.somethingsimilar.com/2013/12/27/code-to-read-when-learning-go/
+	3.http://golang.org/pkg/net/http/
+	4.http://golang.org/pkg/strings/#SplitAfterN
