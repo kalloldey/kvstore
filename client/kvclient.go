@@ -32,6 +32,7 @@ func main() {
 //        	fmt.Print(line)
 		var arr []string	
 		arr=strings.Fields(line)
+		arr[0]=strings.ToLower(arr[0])
 		if arr[0]=="exit"{	
 			fmt.Println("[Exit]")
 			break
@@ -68,9 +69,36 @@ func main() {
 			fmt.Println("\nKey Value Client Help")
 			fmt.Println("$get <key>: Will print the value of the key if it exists in the server")
 			fmt.Println("$set <key> <value>: Will set the value to the key in the server")
+			fmt.Println("$copy <src key> <destination key>")
+			fmt.Println("$delete <key> will delte the key with its value")
 			fmt.Println("$exit: Will exit the program")
 			fmt.Println("$help: Will print this screen")
 			fmt.Println("Empty line: Will exit the program\n")
+		}else if arr[0]=="copy" {
+			if len(arr)!=3{
+                                fmt.Println("[COPY] {Error}Format mismatch of copy request. See help")
+                        } else {
+
+                                _, err := http.Get("http://localhost:8080/copy/"+arr[1]+" "+arr[2])
+                                if err != nil {
+//                                      log.Fatal(err)
+                                        fmt.Printf("[COPY] Value not found for the key : %s",arr[1])
+                                }
+				fmt.Println("[COPY] Value from key",arr[1]," is copied to ",arr[2])
+			}	
+		}else if arr[0]=="delete" {
+			if len(arr)!=2{
+                                fmt.Println("[DELETE] {Error}Format mismatch of delete request. See help")
+                        } else {
+
+                                resp, err := http.Get("http://localhost:8080/del/"+arr[1])
+                                if err != nil {
+//                                      log.Fatal(err)
+                                        fmt.Printf("[GET] Value not found for the key : %s",arr[1])
+                                }
+                                defer resp.Body.Close()        
+                                fmt.Println("[DELETE] Deleted key", arr[1])                               
+                        }
 		}else {
 			fmt.Println("[Error] Invalid Menu Entry. Type help to see more")
 		}

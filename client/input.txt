@@ -4,6 +4,10 @@ get Football
 set Football CR7 Messi Kaka
 get Football
 set Tennis Federer Nadal Paes
+copy Cricket Football
+get Cricket
+get Football
+delete Football
 get Tennis
 get Cricket
 

@@ -6,6 +6,10 @@ Type 'help' to know more
 || KeyValueClient>> [SET] Value set for the key:  Football
 || KeyValueClient>> [GET] Value of key Football: CR7 Messi Kaka
 || KeyValueClient>> [SET] Value set for the key:  Tennis
+|| KeyValueClient>> [COPY] Value from key Cricket  is copied to  Football
+|| KeyValueClient>> [GET] Value of key Cricket: Sachin Saurav Dravid Dhoni
+|| KeyValueClient>> [GET] Value of key Football: Sachin Saurav Dravid Dhoni
+|| KeyValueClient>> [DELETE] Deleted key Football
 || KeyValueClient>> [GET] Value of key Tennis: Federer Nadal Paes
 || KeyValueClient>> [GET] Value of key Cricket: Sachin Saurav Dravid Dhoni
 || KeyValueClient>> [Exit]

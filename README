@@ -19,7 +19,9 @@ How to run:
 10.The input.txt contains some set of get and set commands. It can be redirected to the client code  like: 
 	'$ go run kvclient.go < input.txt > output.txt '. 
 Make sure the kvserver is already running.
-
+11. More commands: 
+	'$copy <src key> <dest key>' will copy a key from src to destination
+	'$delete <key>' will delete a key from the server
 
 Details about the program:
 --------------------------
@@ -33,7 +35,7 @@ Details about the program:
 
 Acknowledgements:
 -----------------
-Read the following websites and see some sample go code from them:
+I read the following websites and see some sample go code from them:
 	1.http://blog.golang.org/go-maps-in-action
 	2.http://www.somethingsimilar.com/2013/12/27/code-to-read-when-learning-go/
 	3.http://golang.org/pkg/net/http/

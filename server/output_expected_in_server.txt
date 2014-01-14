@@ -6,5 +6,10 @@ Key value server is running . . .
 [SET] key:  Football
 [GET] key:  Football
 [SET] key:  Tennis
+[COPY] keySrc:  Cricket  keyDest:  Football
+[GET] key:  Cricket
+[GET] key:  Football
+[DELETE] key: Football
 [GET] key:  Tennis
 [GET] key:  Cricket
+
