@@ -1,0 +1,10 @@
+
+Key value server is running . . . 
+[SET] key:  Cricket
+[GET] key:  Cricket
+[GET] key:  Football
+[SET] key:  Football
+[GET] key:  Football
+[SET] key:  Tennis
+[GET] key:  Tennis
+[GET] key:  Cricket
